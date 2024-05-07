@@ -11,14 +11,14 @@ libraries:
   - com.zaxxer:HikariCP:5.0.1
   - com.h2database:h2:2.1.214
 commands:
-  dquests:
+  wquests:
     description: default player command
     aliases:
       - weeklyquests
       - wq
       - wquests
       - weekly
-  dqadmin:
+  wqadmin:
     description: admin command
     aliases:
       - weeklyquestsadmin
