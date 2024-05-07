@@ -1,4 +1,8 @@
-# ODailyQuests
+# OWeeklyQuests
+- Ordwen's ODailyQuests but able to be run simultaneously to have both daily and weekly quests.
+Commands:
+  - /wquests (aliases; weeklyquests, wq, wquests, weekly)
+  - /wqadmin (aliases; wweklyquestsadmin, wquestsadmin, wqa, wqadmin)
 
 <h3>Dynamize your server & increase player retention !</h3>
 
