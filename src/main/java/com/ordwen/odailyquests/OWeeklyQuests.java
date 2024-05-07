@@ -49,9 +49,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-public final class ODailyQuests extends JavaPlugin {
+public final class OWeeklyQuests extends JavaPlugin {
 
-    public static ODailyQuests INSTANCE;
+    public static OWeeklyQuests INSTANCE;
     private ODailyQuestsAPI API;
 
     /**
@@ -171,12 +171,12 @@ public final class ODailyQuests extends JavaPlugin {
         new EventsManager(this).registerListeners();
 
         /* Load commands */
-        getCommand("dquests").setExecutor(new PlayerCommands());
-        getCommand("dqadmin").setExecutor(new AdminCommands(this));
+        getCommand("wquests").setExecutor(new PlayerCommands());
+        getCommand("wqadmin").setExecutor(new AdminCommands(this));
 
         /* Load Tab Completers */
-        getCommand("dquests").setTabCompleter(new PlayerCompleter());
-        getCommand("dqadmin").setTabCompleter(new AdminCompleter());
+        getCommand("wquests").setTabCompleter(new PlayerCompleter());
+        getCommand("wqadmin").setTabCompleter(new AdminCompleter());
 
         /* Register plugin events */
         getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);

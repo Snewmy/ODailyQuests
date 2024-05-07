@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.api.events.QuestCompletedEvent;
 import com.ordwen.odailyquests.api.events.QuestProgressEvent;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
@@ -108,7 +108,7 @@ public class PlayerProgressor {
 
         if (progression.getProgression() >= quest.getAmountRequired()) {
             Debugger.addDebug("QuestProgressUtils: progression " + progression.getProgression() + " is greater than or equal to amount required " + quest.getAmountRequired() + ".");
-            Bukkit.getScheduler().runTaskLater(ODailyQuests.INSTANCE, () -> {
+            Bukkit.getScheduler().runTaskLater(OWeeklyQuests.INSTANCE, () -> {
                 Debugger.addDebug("QuestProgressUtils: QuestCompletedEvent is called.");
                 final QuestCompletedEvent completedEvent = new QuestCompletedEvent(player, progression, quest);
                 Bukkit.getPluginManager().callEvent(completedEvent);

@@ -1,8 +1,7 @@
 package com.ordwen.odailyquests.files;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.tools.PluginLogger;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -15,14 +14,14 @@ public class HologramsFile {
     /**
      * Getting instance of main class.
      */
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
     /**
      * Main class instance constructor.
-     * @param oDailyQuests main class.
+     * @param oWeeklyQuests main class.
      */
-    public HologramsFile(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public HologramsFile(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     private static File hologramsFile;
@@ -46,10 +45,10 @@ public class HologramsFile {
      * Init progression file.
      */
     public void loadHologramsFile() {
-        hologramsFile = new File(oDailyQuests.getDataFolder(), "holograms.yml");
+        hologramsFile = new File(oWeeklyQuests.getDataFolder(), "holograms.yml");
 
         if (!hologramsFile.exists()) {
-            oDailyQuests.saveResource("holograms.yml", false);
+            oWeeklyQuests.saveResource("holograms.yml", false);
             PluginLogger.info("Holograms file created (YAML).");
         }
 

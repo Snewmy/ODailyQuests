@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression.storage.yaml;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Logs;
 import com.ordwen.odailyquests.files.ProgressionFile;
 import com.ordwen.odailyquests.quests.types.AbstractQuest;
@@ -24,7 +24,7 @@ public class SaveProgressionYAML {
     public void saveProgression(String playerName, PlayerQuests playerQuests, boolean isAsync) {
 
         if (isAsync) {
-            Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> updateFile(playerName, playerQuests));
+            Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> updateFile(playerName, playerQuests));
         } else updateFile(playerName, playerQuests);
     }
 

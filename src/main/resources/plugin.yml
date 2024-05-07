@@ -1,8 +1,8 @@
-name: "ODailyQuests"
+name: "OWeeklyQuests"
 version: '${version}'
-main: com.ordwen.odailyquests.ODailyQuests
+main: com.ordwen.odailyquests.OWeeklyQuests
 api-version: 1.16
-prefix: "O'DailyQuests"
+prefix: "O'WeeklyQuests"
 authors: [ Ordwen ]
 description: Add more objectives and dynamize your server !
 website: https://www.spigotmc.org/resources/odailyquests-daily-quests-plugin-1-16-1-18.100990/
@@ -14,16 +14,17 @@ commands:
   dquests:
     description: default player command
     aliases:
-      - dailyquests
-      - dq
-      - quests
+      - weeklyquests
+      - wq
+      - wquests
+      - weekly
   dqadmin:
     description: admin command
     aliases:
-      - dailyquestsadmin
-      - dquestsadmin
-      - dqa
-      - qadmin
+      - weeklyquestsadmin
+      - wquestsadmin
+      - wqa
+      - wqadmin
 
 
 

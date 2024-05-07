@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.admin;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Modes;
 import com.ordwen.odailyquests.configuration.integrations.ItemsAdderEnabled;
 import com.ordwen.odailyquests.configuration.integrations.OraxenEnabled;
@@ -18,7 +18,7 @@ import java.util.Set;
 
 public class ReloadService {
 
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
     private final CategoriesLoader categoriesLoader;
     private final SQLManager sqlManager;
     private final YamlManager yamlManager;
@@ -26,17 +26,17 @@ public class ReloadService {
     /**
      * Constructor.
      *
-     * @param oDailyQuests main class instance.
+     * @param oWeeklyQuests main class instance.
      */
-    public ReloadService(ODailyQuests oDailyQuests, boolean useSQL) {
-        this.oDailyQuests = oDailyQuests;
-        this.categoriesLoader = oDailyQuests.getCategoriesLoader();
+    public ReloadService(OWeeklyQuests oWeeklyQuests, boolean useSQL) {
+        this.oWeeklyQuests = oWeeklyQuests;
+        this.categoriesLoader = oWeeklyQuests.getCategoriesLoader();
 
         if (useSQL) {
-            this.sqlManager = oDailyQuests.getSQLManager();
+            this.sqlManager = oWeeklyQuests.getSQLManager();
             this.yamlManager = null;
         } else {
-            this.yamlManager = oDailyQuests.getYamlManager();
+            this.yamlManager = oWeeklyQuests.getYamlManager();
             this.sqlManager = null;
         }
     }
@@ -113,23 +113,23 @@ public class ReloadService {
      * Execute all required actions when the command /qadmin reload is performed.
      */
     public void reload() {
-        oDailyQuests.getFilesManager().loadAllFiles();
+        oWeeklyQuests.getFilesManager().loadAllFiles();
 
         /* Load holograms */
         HologramsManager.loadHolograms();
 
         /* Load specific settings */
-        oDailyQuests.getConfigurationManager().loadConfiguration();
+        oWeeklyQuests.getConfigurationManager().loadConfiguration();
 
         /* Load quests & interface */
         if ((!ItemsAdderEnabled.isEnabled() || ItemsAdderEnabled.isLoaded())
                 && (!OraxenEnabled.isEnabled() || OraxenEnabled.isLoaded())) {
             categoriesLoader.loadCategories();
-            oDailyQuests.getInterfacesManager().initAllObjects();
+            oWeeklyQuests.getInterfacesManager().initAllObjects();
         }
 
         saveConnectedPlayerQuests(true);
-        Bukkit.getScheduler().runTaskLater(oDailyQuests, this::loadConnectedPlayerQuests, 20L);
+        Bukkit.getScheduler().runTaskLater(oWeeklyQuests, this::loadConnectedPlayerQuests, 20L);
     }
 
     private void restartNeeded() {

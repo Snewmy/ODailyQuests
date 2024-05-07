@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.files;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.enums.QuestsMessages;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,14 +15,14 @@ public class ConfigurationFiles {
     /**
      * Getting instance of main class.
      */
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
     /**
      * Main class instance constructor.
-     * @param oDailyQuests main class.
+     * @param oWeeklyQuests main class.
      */
-    public ConfigurationFiles(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public ConfigurationFiles(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     private FileConfiguration config;
@@ -49,11 +49,11 @@ public class ConfigurationFiles {
      */
     public void loadConfigurationFiles() {
 
-        configFile = new File(oDailyQuests.getDataFolder(), "config.yml");
+        configFile = new File(oWeeklyQuests.getDataFolder(), "config.yml");
 
         /* Configuration file */
         if (!configFile.exists()) {
-            oDailyQuests.saveResource("config.yml", false);
+            oWeeklyQuests.saveResource("config.yml", false);
             PluginLogger.info("Configuration file created.");
         }
 
@@ -75,11 +75,11 @@ public class ConfigurationFiles {
      */
     public void loadMessagesFiles() {
 
-        File messagesFile = new File(oDailyQuests.getDataFolder(), "messages.yml");
+        File messagesFile = new File(oWeeklyQuests.getDataFolder(), "messages.yml");
 
         /* Messages file */
         if (!messagesFile.exists()) {
-            oDailyQuests.saveResource("messages.yml", false);
+            oWeeklyQuests.saveResource("messages.yml", false);
             PluginLogger.info("Messages file created.");
         }
 

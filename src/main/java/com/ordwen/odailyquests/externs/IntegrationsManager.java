@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.externs;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.externs.hooks.Protection;
 import com.ordwen.odailyquests.externs.hooks.eco.CoinsEngineHook;
 import com.ordwen.odailyquests.externs.hooks.eco.VaultHook;
@@ -20,10 +20,10 @@ import static org.bukkit.Bukkit.getServer;
 
 public class IntegrationsManager {
 
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
-    public IntegrationsManager(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public IntegrationsManager(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     /**
@@ -117,7 +117,7 @@ public class IntegrationsManager {
      */
     private void loadCitizens() {
         if (CitizensHook.setupCitizens()) {
-            getServer().getPluginManager().registerEvents(new CitizensHook(), oDailyQuests);
+            getServer().getPluginManager().registerEvents(new CitizensHook(), oWeeklyQuests);
             PluginLogger.info("Citizens successfully hooked.");
         }
     }

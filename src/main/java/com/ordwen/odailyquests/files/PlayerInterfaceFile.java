@@ -1,8 +1,7 @@
 package com.ordwen.odailyquests.files;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.tools.PluginLogger;
-import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -14,14 +13,14 @@ public class PlayerInterfaceFile {
     /**
      * Getting instance of main class.
      */
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
     /**
      * Main class instance constructor.
-     * @param oDailyQuests main class.
+     * @param oWeeklyQuests main class.
      */
-    public PlayerInterfaceFile(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public PlayerInterfaceFile(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     private static FileConfiguration playerInterface;
@@ -45,10 +44,10 @@ public class PlayerInterfaceFile {
      * Init progression file.
      */
     public void loadPlayerInterfaceFile() {
-        playerInterfaceFile = new File(oDailyQuests.getDataFolder(), "playerInterface.yml");
+        playerInterfaceFile = new File(oWeeklyQuests.getDataFolder(), "playerInterface.yml");
 
         if (!playerInterfaceFile.exists()) {
-            oDailyQuests.saveResource("playerInterface.yml", false);
+            oWeeklyQuests.saveResource("playerInterface.yml", false);
             PluginLogger.warn("Player interface file created (YAML).");
         }
 

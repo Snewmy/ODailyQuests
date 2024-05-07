@@ -1,14 +1,14 @@
 package com.ordwen.odailyquests.events.restart;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.tools.PluginLogger;
 
 public class RestartHandler {
 
-    private final ODailyQuests plugin;
+    private final OWeeklyQuests plugin;
 
-    public RestartHandler(ODailyQuests oDailyQuests) {
-        this.plugin = oDailyQuests;
+    public RestartHandler(OWeeklyQuests oWeeklyQuests) {
+        this.plugin = oWeeklyQuests;
     }
 
     protected void setServerStopping() {

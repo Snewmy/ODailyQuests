@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.events.listeners.global;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 
 import com.ordwen.odailyquests.quests.player.progression.PlayerProgressor;
@@ -14,7 +14,7 @@ public class PlayerRespawnListener extends PlayerProgressor implements Listener 
     public void onPlayerRespawn(org.bukkit.event.player.PlayerRespawnEvent event) {
         final Player player = event.getPlayer();
         if (player.hasMetadata("odailyquests:dead")) {
-            player.removeMetadata("odailyquests:dead", ODailyQuests.INSTANCE);
+            player.removeMetadata("odailyquests:dead", OWeeklyQuests.INSTANCE);
 
             Debugger.addDebug("=========================================================================================");
             Debugger.addDebug("PlayerRespawnListener: onPlayerRespawn summoned by " + player.getName());

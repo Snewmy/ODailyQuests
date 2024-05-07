@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.admin;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.commands.admin.handlers.*;
 import com.ordwen.odailyquests.commands.admin.convert.ConverterManager;
 import com.ordwen.odailyquests.enums.QuestsMessages;
@@ -15,8 +15,8 @@ public class AdminCommands implements CommandExecutor {
 
     private final ReloadService reloadService;
 
-    public AdminCommands(ODailyQuests oDailyQuests) {
-        this.reloadService = oDailyQuests.getReloadService();
+    public AdminCommands(OWeeklyQuests oWeeklyQuests) {
+        this.reloadService = oWeeklyQuests.getReloadService();
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.ordwen.odailyquests.files;
 
-import com.ordwen.odailyquests.ODailyQuests;
-import org.bukkit.ChatColor;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -15,14 +14,14 @@ public class QuestsFiles {
     /**
      * Getting instance of main class.
      */
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
     /**
      * Main class instance constructor.
-     * @param oDailyQuests main class.
+     * @param oWeeklyQuests main class.
      */
-    public QuestsFiles(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public QuestsFiles(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     private static File globalQuestsFile;
@@ -104,32 +103,32 @@ public class QuestsFiles {
      */
     public void loadQuestsFiles() {
 
-        globalQuestsFile = new File(oDailyQuests.getDataFolder(), "quests/globalQuests.yml");
-        easyQuestsFile = new File(oDailyQuests.getDataFolder(), "quests/easyQuests.yml");
-        mediumQuestsFile = new File(oDailyQuests.getDataFolder(), "quests/mediumQuests.yml");
-        hardQuestsFile = new File(oDailyQuests.getDataFolder(), "quests/hardQuests.yml");
+        globalQuestsFile = new File(oWeeklyQuests.getDataFolder(), "quests/globalQuests.yml");
+        easyQuestsFile = new File(oWeeklyQuests.getDataFolder(), "quests/easyQuests.yml");
+        mediumQuestsFile = new File(oWeeklyQuests.getDataFolder(), "quests/mediumQuests.yml");
+        hardQuestsFile = new File(oWeeklyQuests.getDataFolder(), "quests/hardQuests.yml");
 
         /* Global quests */
         if (!globalQuestsFile.exists()) {
-            oDailyQuests.saveResource("quests/globalQuests.yml", false);
+            oWeeklyQuests.saveResource("quests/globalQuests.yml", false);
             PluginLogger.info("Global quests file created.");
         }
 
         /* Easy quests */
         if (!easyQuestsFile.exists()) {
-            oDailyQuests.saveResource("quests/easyQuests.yml", false);
+            oWeeklyQuests.saveResource("quests/easyQuests.yml", false);
             PluginLogger.info("Easy quests file created.");
         }
 
         /* Medium quests */
         if (!mediumQuestsFile.exists()) {
-            oDailyQuests.saveResource("quests/mediumQuests.yml", false);
+            oWeeklyQuests.saveResource("quests/mediumQuests.yml", false);
             PluginLogger.info("Medium quests file created.");
         }
 
         /* Hard quests */
         if (!hardQuestsFile.exists()) {
-            oDailyQuests.saveResource("quests/hardQuests.yml", false);
+            oWeeklyQuests.saveResource("quests/hardQuests.yml", false);
             PluginLogger.info("Hard quests file created.");
         }
 

@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.events.listeners.item;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Antiglitch;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 
@@ -49,7 +49,7 @@ public class BlockPlaceListener extends PlayerProgressor implements Listener {
         }
 
         if (Antiglitch.isStorePlacedBlocks()) {
-            block.setMetadata("odailyquests:placed", new FixedMetadataValue(ODailyQuests.INSTANCE, player.getUniqueId().toString()));
+            block.setMetadata("odailyquests:placed", new FixedMetadataValue(OWeeklyQuests.INSTANCE, player.getUniqueId().toString()));
         }
     }
 }

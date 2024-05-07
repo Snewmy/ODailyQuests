@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.events;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.UseCustomFurnaceResults;
 import com.ordwen.odailyquests.configuration.integrations.ItemsAdderEnabled;
 import com.ordwen.odailyquests.configuration.integrations.OraxenEnabled;
@@ -25,10 +25,10 @@ import org.bukkit.Bukkit;
 
 public class EventsManager {
 
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
-    public EventsManager(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public EventsManager(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     /**
@@ -37,76 +37,76 @@ public class EventsManager {
     public void registerListeners() {
 
         // entity events
-        Bukkit.getPluginManager().registerEvents(new EntityBreedListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new EntityTameListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new ShearEntityListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new EntityDeathListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new SpawnerSpawnListener(), oDailyQuests);
+        Bukkit.getPluginManager().registerEvents(new EntityBreedListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new EntityTameListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new ShearEntityListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new EntityDeathListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new SpawnerSpawnListener(), oWeeklyQuests);
         //Bukkit.getPluginManager().registerEvents(new ProjectileHitListener(), oDailyQuests);
 
         if (EliteMobsHook.isEliteMobsSetup()) {
-            Bukkit.getPluginManager().registerEvents(new EliteMobDeathListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new EliteMobDeathListener(), oWeeklyQuests);
         }
 
         if (MythicMobsHook.isMythicMobsSetup()) {
-            Bukkit.getPluginManager().registerEvents(new MythicMobDeathListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new MythicMobDeathListener(), oWeeklyQuests);
         }
 
         if (WildStackerHook.isWildStackerSetup()) {
-            Bukkit.getPluginManager().registerEvents(new EntityUnstackListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new EntityUnstackListener(), oWeeklyQuests);
         }
 
         // global events
-        Bukkit.getPluginManager().registerEvents(new BucketFillListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerExpChangeListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerLevelChangeListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerInteractEntityListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerDeathListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerRespawnListener(), oDailyQuests);
+        Bukkit.getPluginManager().registerEvents(new BucketFillListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerExpChangeListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerLevelChangeListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerInteractEntityListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerDeathListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerRespawnListener(), oWeeklyQuests);
 
         // item events
-        Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new CraftItemListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new SmithItemListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new EnchantItemListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new FurnaceExtractListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PickupItemListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerFishListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerItemConsumeListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new BlockDropItemListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerHarvestBlockListener(), oDailyQuests);
-        Bukkit.getPluginManager().registerEvents(new PlayerDropItemListener(), oDailyQuests);
+        Bukkit.getPluginManager().registerEvents(new BlockBreakListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new BlockPlaceListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new CraftItemListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new SmithItemListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new EnchantItemListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new FurnaceExtractListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PickupItemListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerFishListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerItemConsumeListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new ProjectileLaunchListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new BlockDropItemListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerHarvestBlockListener(), oWeeklyQuests);
+        Bukkit.getPluginManager().registerEvents(new PlayerDropItemListener(), oWeeklyQuests);
 
         if (Bukkit.getServer().getPluginManager().isPluginEnabled("PyroFishingPro")) {
-            Bukkit.getPluginManager().registerEvents(new PyroFishCatchListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new PyroFishCatchListener(), oWeeklyQuests);
         }
 
         if (Bukkit.getServer().getPluginManager().isPluginEnabled("Votifier")) {
-            Bukkit.getPluginManager().registerEvents(new VotifierListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new VotifierListener(), oWeeklyQuests);
         }
 
         // inventory events
-        Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), oDailyQuests);
+        Bukkit.getPluginManager().registerEvents(new InventoryCloseListener(), oWeeklyQuests);
 
         // custom events
         if (ItemsAdderEnabled.isEnabled()
                 || OraxenEnabled.isEnabled()
                 || UseCustomFurnaceResults.isEnabled()) {
-            Bukkit.getPluginManager().registerEvents(new CustomFurnaceExtractListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new CustomFurnaceExtractListener(), oWeeklyQuests);
         }
 
         // other plugins events
         if (ItemsAdderEnabled.isEnabled()) {
-            Bukkit.getPluginManager().registerEvents(new ItemsAdderLoadDataListener(oDailyQuests), oDailyQuests);
-            Bukkit.getPluginManager().registerEvents(new CustomBlockBreakListener(), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new ItemsAdderLoadDataListener(oWeeklyQuests), oWeeklyQuests);
+            Bukkit.getPluginManager().registerEvents(new CustomBlockBreakListener(), oWeeklyQuests);
         }
 
         if (OraxenEnabled.isEnabled()) {
-            Bukkit.getPluginManager().registerEvents(new OraxenItemsLoadedListener(oDailyQuests), oDailyQuests);
+            Bukkit.getPluginManager().registerEvents(new OraxenItemsLoadedListener(oWeeklyQuests), oWeeklyQuests);
         }
     }
 }

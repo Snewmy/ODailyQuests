@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.admin.convert;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.commands.admin.ACommandHandler;
 import com.ordwen.odailyquests.tools.PluginLogger;
 import org.bukkit.ChatColor;
@@ -8,11 +8,11 @@ import org.bukkit.command.CommandSender;
 
 public class ConverterManager extends ACommandHandler {
 
-    final ODailyQuests oDailyQuests;
+    final OWeeklyQuests oWeeklyQuests;
 
     public ConverterManager(CommandSender sender, String[] args) {
         super(sender, args);
-        this.oDailyQuests = ODailyQuests.INSTANCE;
+        this.oWeeklyQuests = OWeeklyQuests.INSTANCE;
     }
 
     /**
@@ -47,10 +47,10 @@ public class ConverterManager extends ACommandHandler {
         if (oldFormat.equalsIgnoreCase("yaml")) {
             switch (newFormat) {
                 case "MySQL", "mysql" -> {
-                    return new YAMLtoMySQLConverter().convert(oDailyQuests);
+                    return new YAMLtoMySQLConverter().convert(oWeeklyQuests);
                 }
                 case "H2", "h2" -> {
-                    return new YAMLtoH2Converter().convert(oDailyQuests);
+                    return new YAMLtoH2Converter().convert(oWeeklyQuests);
                 }
                 default -> {
                     PluginLogger.error("The new format is not supported.");

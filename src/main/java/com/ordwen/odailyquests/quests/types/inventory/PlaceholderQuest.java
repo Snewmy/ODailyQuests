@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.types.inventory;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.quests.ConditionType;
 import com.ordwen.odailyquests.quests.types.AbstractQuest;
 import com.ordwen.odailyquests.quests.types.shared.BasicQuest;
@@ -73,9 +73,9 @@ public class PlaceholderQuest extends AbstractQuest {
         if (meta == null) return false;
 
         final PersistentDataContainer container = meta.getPersistentDataContainer();
-        container.set(new NamespacedKey(ODailyQuests.INSTANCE, "quest_type"), PersistentDataType.STRING, "placeholder");
-        container.set(new NamespacedKey(ODailyQuests.INSTANCE, "quest_index"), PersistentDataType.INTEGER, index);
-        container.set(new NamespacedKey(ODailyQuests.INSTANCE, "file_name"), PersistentDataType.STRING, file);
+        container.set(new NamespacedKey(OWeeklyQuests.INSTANCE, "quest_type"), PersistentDataType.STRING, "placeholder");
+        container.set(new NamespacedKey(OWeeklyQuests.INSTANCE, "quest_index"), PersistentDataType.INTEGER, index);
+        container.set(new NamespacedKey(OWeeklyQuests.INSTANCE, "file_name"), PersistentDataType.STRING, file);
 
         return true;
     }

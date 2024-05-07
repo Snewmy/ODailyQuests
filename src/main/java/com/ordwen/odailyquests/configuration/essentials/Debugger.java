@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.configuration.essentials;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.tools.PluginLogger;
 
 import java.io.File;
@@ -10,16 +10,16 @@ import java.util.Date;
 
 public class Debugger {
 
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
     private static boolean debugMode;
     private static File debugFile;
 
-    public Debugger(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public Debugger(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     public void loadDebugMode() {
-        debugMode = oDailyQuests.getConfigurationFiles().getConfigFile().getBoolean("debug");
+        debugMode = oWeeklyQuests.getConfigurationFiles().getConfigFile().getBoolean("debug");
         if (debugMode) {
             loadDebugFile();
             PluginLogger.warn("Debug mode is enabled. This may cause performance issues.");
@@ -28,10 +28,10 @@ public class Debugger {
 
     public void loadDebugFile() {
 
-        debugFile = new File(oDailyQuests.getDataFolder(), "debug.yml");
+        debugFile = new File(oWeeklyQuests.getDataFolder(), "debug.yml");
 
         if (!debugFile.exists()) {
-            oDailyQuests.saveResource("debug.yml", false);
+            oWeeklyQuests.saveResource("debug.yml", false);
             PluginLogger.info("Debug file created (YAML).");
         }
     }

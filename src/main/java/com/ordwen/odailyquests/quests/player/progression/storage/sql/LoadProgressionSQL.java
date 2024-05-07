@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression.storage.sql;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 import com.ordwen.odailyquests.configuration.essentials.QuestsAmount;
 import com.ordwen.odailyquests.enums.QuestsMessages;
@@ -45,7 +45,7 @@ public class LoadProgressionSQL {
 
         LinkedHashMap<AbstractQuest, Progression> quests = new LinkedHashMap<>();
 
-        Bukkit.getScheduler().runTaskLaterAsynchronously(ODailyQuests.INSTANCE, () -> {
+        Bukkit.getScheduler().runTaskLaterAsynchronously(OWeeklyQuests.INSTANCE, () -> {
 
             Debugger.addDebug("Running async task to load progression of " + playerName + " from SQL database.");
 

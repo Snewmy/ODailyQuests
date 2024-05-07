@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.api.events.AllCategoryQuestsCompletedEvent;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 import com.ordwen.odailyquests.configuration.essentials.Modes;
@@ -71,7 +71,7 @@ public class PlayerQuests {
                 if (claimedRewards.contains(entry.getKey())) continue;
                 if (entry.getValue() == QuestsAmount.getQuestsAmountByCategory(entry.getKey())) {
                     final AllCategoryQuestsCompletedEvent event = new AllCategoryQuestsCompletedEvent(player, entry.getKey());
-                    ODailyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
+                    OWeeklyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
                     claimedRewards.add(entry.getKey());
                 }
             }
@@ -82,7 +82,7 @@ public class PlayerQuests {
             Debugger.addDebug("PlayerQuests: AllQuestsCompletedEvent is called.");
 
             final AllQuestsCompletedEvent event = new AllQuestsCompletedEvent(player);
-            ODailyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
+            OWeeklyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
         }
     }
 

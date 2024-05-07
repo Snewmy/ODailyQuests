@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression.storage.sql.h2;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.LoadProgressionSQL;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.SQLManager;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.SaveProgressionSQL;
@@ -9,15 +9,13 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class H2Manager extends SQLManager {
 
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
-    public H2Manager(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public H2Manager(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
 
         super.loadProgressionSQL = new LoadProgressionSQL(this);
         super.saveProgressionSQL = new SaveProgressionSQL(this);
@@ -43,7 +41,7 @@ public class H2Manager extends SQLManager {
     private void initH2() {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("org.h2.Driver");
-        config.setJdbcUrl("jdbc:h2:./plugins/ODailyQuests/database");
+        config.setJdbcUrl("jdbc:h2:./plugins/OWeeklyQuests/database");
         config.setUsername("odq");
         config.setPassword("");
         config.setMaximumPoolSize(100);

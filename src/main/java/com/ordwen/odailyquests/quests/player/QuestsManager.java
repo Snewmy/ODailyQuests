@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 import com.ordwen.odailyquests.configuration.essentials.Modes;
 import com.ordwen.odailyquests.configuration.essentials.QuestsAmount;
@@ -25,21 +25,21 @@ public class QuestsManager implements Listener {
      */
     private final SQLManager sqlManager;
     private final YamlManager yamlManager;
-    private final ODailyQuests plugin;
+    private final OWeeklyQuests plugin;
 
     /**
      * Class instance constructor.
      *
-     * @param oDailyQuests main class instance.
+     * @param oWeeklyQuests main class instance.
      */
-    public QuestsManager(ODailyQuests oDailyQuests, boolean useSQL) {
-        this.plugin = oDailyQuests;
+    public QuestsManager(OWeeklyQuests oWeeklyQuests, boolean useSQL) {
+        this.plugin = oWeeklyQuests;
 
         if (useSQL) {
-            this.sqlManager = oDailyQuests.getSQLManager();
+            this.sqlManager = oWeeklyQuests.getSQLManager();
             this.yamlManager = null;
         } else {
-            this.yamlManager = oDailyQuests.getYamlManager();
+            this.yamlManager = oWeeklyQuests.getYamlManager();
             this.sqlManager = null;
         }
     }

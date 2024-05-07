@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.tools;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -11,9 +11,9 @@ import java.util.List;
 
 public class AutoUpdater {
 
-    private final ODailyQuests plugin;
+    private final OWeeklyQuests plugin;
 
-    public AutoUpdater(ODailyQuests plugin) {
+    public AutoUpdater(OWeeklyQuests plugin) {
         this.plugin = plugin;
     }
 

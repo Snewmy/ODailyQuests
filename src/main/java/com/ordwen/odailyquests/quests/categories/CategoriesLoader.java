@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.categories;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Modes;
 import com.ordwen.odailyquests.configuration.essentials.QuestsAmount;
 import com.ordwen.odailyquests.files.QuestsFiles;
@@ -44,7 +44,7 @@ public class CategoriesLoader {
             if (globalCategory.size() < QuestsAmount.getQuestsAmount()) {
                 PluginLogger.error("Impossible to enable the plugin.");
                 PluginLogger.error("You need to have at least " + QuestsAmount.getQuestsAmount() + " quests in your globalQuest.yml file.");
-                Bukkit.getPluginManager().disablePlugin(ODailyQuests.INSTANCE);
+                Bukkit.getPluginManager().disablePlugin(OWeeklyQuests.INSTANCE);
             }
 
         } else if (Modes.getQuestsMode() == 2) {
@@ -54,7 +54,7 @@ public class CategoriesLoader {
             if (easyCategory.size() < QuestsAmount.getEasyQuestsAmount()) {
                 PluginLogger.error("Impossible to enable the plugin.");
                 PluginLogger.error("You need to have at least " + QuestsAmount.getEasyQuestsAmount() + " quest in your easyQuests.yml file.");
-                Bukkit.getPluginManager().disablePlugin(ODailyQuests.INSTANCE);
+                Bukkit.getPluginManager().disablePlugin(OWeeklyQuests.INSTANCE);
             }
 
             /* load medium quests */
@@ -62,7 +62,7 @@ public class CategoriesLoader {
             if (mediumCategory.size() < QuestsAmount.getMediumQuestsAmount()) {
                 PluginLogger.error("Impossible to enable the plugin.");
                 PluginLogger.error("You need to have at least " + QuestsAmount.getMediumQuestsAmount() + " quest in your mediumQuests.yml file.");
-                Bukkit.getPluginManager().disablePlugin(ODailyQuests.INSTANCE);
+                Bukkit.getPluginManager().disablePlugin(OWeeklyQuests.INSTANCE);
             }
 
             /* load hard quests */
@@ -70,7 +70,7 @@ public class CategoriesLoader {
             if (hardCategory.size() < QuestsAmount.getHardQuestsAmount()) {
                 PluginLogger.error("Impossible to enable the plugin.");
                 PluginLogger.error("You need to have at least " + QuestsAmount.getHardQuestsAmount() + " quest in your hardQuests.yml file.");
-                Bukkit.getPluginManager().disablePlugin(ODailyQuests.INSTANCE);
+                Bukkit.getPluginManager().disablePlugin(OWeeklyQuests.INSTANCE);
             }
         } else {
             PluginLogger.error("Impossible to load the quests. The selected mode is incorrect.");

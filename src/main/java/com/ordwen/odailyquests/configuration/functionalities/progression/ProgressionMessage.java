@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.configuration.functionalities.progression;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.enums.ProgressionMessageType;
 import com.ordwen.odailyquests.files.ConfigurationFiles;
 import com.ordwen.odailyquests.tools.ColorConvert;
@@ -97,7 +97,7 @@ public class ProgressionMessage {
                     bossBar.addPlayer(player);
                     currentBossBars.put(player, bossBar);
 
-                    Bukkit.getScheduler().runTaskLater(ODailyQuests.INSTANCE, () -> removeBossBar(player), 100L);
+                    Bukkit.getScheduler().runTaskLater(OWeeklyQuests.INSTANCE, () -> removeBossBar(player), 100L);
                 }
             }
         }

@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.interfaces;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.commands.interfaces.playerinterface.items.Buttons;
 import com.ordwen.odailyquests.externs.hooks.placeholders.PAPIHook;
 import com.ordwen.odailyquests.files.ConfigurationFiles;
@@ -40,8 +40,8 @@ public class QuestsInterfaces {
     private static final List<ItemStack> emptyCaseItems = new ArrayList<>();
     private final Map<String, Pair<String, List<Inventory>>> categorizedInterfaces = new HashMap<>();
 
-    private final NamespacedKey usePlaceholdersKey = new NamespacedKey(ODailyQuests.INSTANCE, "odq_interface_use_placeholders");
-    private final NamespacedKey requiredKey = new NamespacedKey(ODailyQuests.INSTANCE, "odq_interface_required");
+    private final NamespacedKey usePlaceholdersKey = new NamespacedKey(OWeeklyQuests.INSTANCE, "odq_interface_use_placeholders");
+    private final NamespacedKey requiredKey = new NamespacedKey(OWeeklyQuests.INSTANCE, "odq_interface_required");
 
     /**
      * Load the global quests interface.

@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.configuration;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.*;
 import com.ordwen.odailyquests.configuration.functionalities.*;
 import com.ordwen.odailyquests.configuration.functionalities.progression.ActionBar;
@@ -24,10 +24,10 @@ public class ConfigurationManager {
     /**
      * Class instance constructor.
      *
-     * @param oDailyQuests main class instance.
+     * @param oWeeklyQuests main class instance.
      */
-    public ConfigurationManager(ODailyQuests oDailyQuests) {
-        this.configurationFiles =  oDailyQuests.getConfigurationFiles();
+    public ConfigurationManager(OWeeklyQuests oWeeklyQuests) {
+        this.configurationFiles =  oWeeklyQuests.getConfigurationFiles();
     }
 
     /**

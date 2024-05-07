@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression.storage.sql.mysql;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.files.ConfigurationFiles;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.LoadProgressionSQL;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.SQLManager;
@@ -28,10 +28,10 @@ public class MySQLManager extends SQLManager {
 
     /**
      * Constructor.
-     * @param oDailyQuests main class instance.
+     * @param oWeeklyQuests main class instance.
      */
-    public MySQLManager(ODailyQuests oDailyQuests) {
-        this.configurationFiles = oDailyQuests.getConfigurationFiles();
+    public MySQLManager(OWeeklyQuests oWeeklyQuests) {
+        this.configurationFiles = oWeeklyQuests.getConfigurationFiles();
 
         super.loadProgressionSQL = new LoadProgressionSQL(this);
         super.saveProgressionSQL = new SaveProgressionSQL(this);

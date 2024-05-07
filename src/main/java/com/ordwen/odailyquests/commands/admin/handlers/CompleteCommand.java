@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.admin.handlers;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.api.events.QuestCompletedEvent;
 import com.ordwen.odailyquests.commands.admin.ACommandHandler;
 import com.ordwen.odailyquests.configuration.essentials.QuestsAmount;
@@ -73,7 +73,7 @@ public class CompleteCommand extends ACommandHandler {
                 }
 
                 final QuestCompletedEvent event = new QuestCompletedEvent(target, progression, quest);
-                ODailyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
+                OWeeklyQuests.INSTANCE.getServer().getPluginManager().callEvent(event);
 
                 return;
             }

@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.events.listeners.global;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 
 import com.ordwen.odailyquests.quests.player.progression.checkers.AbstractGlobalChecker;
 import org.bukkit.event.EventHandler;
@@ -12,6 +12,6 @@ public class PlayerDeathListener extends AbstractGlobalChecker implements Listen
 
     @EventHandler
     public void onPlayerDeath(PlayerDeathEvent event) {
-        event.getEntity().setMetadata("odailyquests:dead", new FixedMetadataValue(ODailyQuests.INSTANCE, true));
+        event.getEntity().setMetadata("odailyquests:dead", new FixedMetadataValue(OWeeklyQuests.INSTANCE, true));
     }
 }

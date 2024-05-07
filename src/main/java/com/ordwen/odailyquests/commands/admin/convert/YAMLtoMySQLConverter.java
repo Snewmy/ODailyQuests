@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.commands.admin.convert;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.files.ProgressionFile;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.SQLManager;
 import com.ordwen.odailyquests.quests.player.progression.storage.sql.mysql.MySQLManager;
@@ -10,13 +10,13 @@ import org.bukkit.configuration.file.FileConfiguration;
 
 public class YAMLtoMySQLConverter extends SQLConverter {
 
-    public boolean convert(ODailyQuests oDailyQuests) {
+    public boolean convert(OWeeklyQuests oWeeklyQuests) {
 
         try {
-            Bukkit.getScheduler().runTaskAsynchronously(oDailyQuests, () -> {
+            Bukkit.getScheduler().runTaskAsynchronously(oWeeklyQuests, () -> {
 
                 final FileConfiguration progressionFile = ProgressionFile.getProgressionFileConfiguration();
-                final SQLManager sqlManager = new MySQLManager(ODailyQuests.INSTANCE);
+                final SQLManager sqlManager = new MySQLManager(OWeeklyQuests.INSTANCE);
 
                 convertData(progressionFile, sqlManager);
             });

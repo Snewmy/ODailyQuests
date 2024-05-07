@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.externs.hooks.holograms;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.files.HologramsFile;
 import com.ordwen.odailyquests.tools.PluginLogger;
 import org.bukkit.Bukkit;
@@ -23,7 +23,7 @@ public class HologramsManager {
      * @param item     of the linked quest
      */
     public static void saveHologram(int index, Location location, List<String> lines, ItemStack item) {
-        Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> {
             HologramsFile.getHologramsFileConfiguration().set(index + ".location", location);
             HologramsFile.getHologramsFileConfiguration().set(index + ".lines", lines);
             HologramsFile.getHologramsFileConfiguration().set(index + ".item", item);
@@ -40,7 +40,7 @@ public class HologramsManager {
     public static boolean deleteHologram(int index) {
         AtomicBoolean isValid = new AtomicBoolean(false);
 
-        Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> {
             if (HologramsFile.getHologramsFileConfiguration().getConfigurationSection(String.valueOf(index)) != null) {
                 HologramsFile.getHologramsFileConfiguration().set(String.valueOf(index), null);
                 HolographicDisplaysHook.getAllHolograms().get(index).delete();
@@ -58,7 +58,7 @@ public class HologramsManager {
      * Save holograms file.
      */
     private static void saveFile() {
-        Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> {
             try {
                 HologramsFile.getHologramsFileConfiguration().save(HologramsFile.getHologramsFile());
                 PluginLogger.info("Holograms file successfully saved.");
@@ -75,7 +75,7 @@ public class HologramsManager {
      */
     public static void loadHolograms() {
         if (HolographicDisplaysHook.isHolographicDisplaysSetup()) {
-            Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> {
+            Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> {
                 final FileConfiguration file = HologramsFile.getHologramsFileConfiguration();
                 for (String holo : file.getConfigurationSection("").getKeys(false)) {
                     Location loc = file.getLocation(holo + ".location");

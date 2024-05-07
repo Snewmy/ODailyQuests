@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.api.quests.QuestTypeRegistry;
 import com.ordwen.odailyquests.quests.getters.QuestItemGetter;
 import com.ordwen.odailyquests.quests.types.*;
@@ -20,7 +20,7 @@ import java.util.List;
 public class QuestsLoader extends QuestItemGetter {
 
     private final RewardLoader rewardLoader = new RewardLoader();
-    private final QuestTypeRegistry questTypeRegistry = ODailyQuests.INSTANCE.getAPI().getQuestTypeRegistry();
+    private final QuestTypeRegistry questTypeRegistry = OWeeklyQuests.INSTANCE.getAPI().getQuestTypeRegistry();
 
     /**
      * Load the reward of a quest.

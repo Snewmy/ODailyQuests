@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.quests.player.progression.storage.sql;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.configuration.essentials.Debugger;
 import com.ordwen.odailyquests.configuration.essentials.Logs;
 import com.ordwen.odailyquests.configuration.essentials.Modes;
@@ -74,7 +74,7 @@ public class SaveProgressionSQL {
         final LinkedHashMap<AbstractQuest, Progression> quests = playerQuests.getPlayerQuests();
 
         if (isAsync) {
-            Bukkit.getScheduler().runTaskAsynchronously(ODailyQuests.INSTANCE, () -> {
+            Bukkit.getScheduler().runTaskAsynchronously(OWeeklyQuests.INSTANCE, () -> {
                 Debugger.addDebug("Saving player " + playerName + " progression asynchronously");
 
                 saveDatas(playerName, timestamp, achievedQuests, totalAchievedQuests, quests);

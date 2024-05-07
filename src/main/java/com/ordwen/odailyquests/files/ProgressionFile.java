@@ -1,6 +1,6 @@
 package com.ordwen.odailyquests.files;
 
-import com.ordwen.odailyquests.ODailyQuests;
+import com.ordwen.odailyquests.OWeeklyQuests;
 import com.ordwen.odailyquests.tools.PluginLogger;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -14,14 +14,14 @@ public class ProgressionFile {
     /**
      * Getting instance of main class.
      */
-    private final ODailyQuests oDailyQuests;
+    private final OWeeklyQuests oWeeklyQuests;
 
     /**
      * Main class instance constructor.
-     * @param oDailyQuests main class.
+     * @param oWeeklyQuests main class.
      */
-    public ProgressionFile(ODailyQuests oDailyQuests) {
-        this.oDailyQuests = oDailyQuests;
+    public ProgressionFile(OWeeklyQuests oWeeklyQuests) {
+        this.oWeeklyQuests = oWeeklyQuests;
     }
 
     private static File progressionFile;
@@ -46,10 +46,10 @@ public class ProgressionFile {
      */
     public void loadProgressionFile() {
 
-        progressionFile = new File(oDailyQuests.getDataFolder(), "progression.yml");
+        progressionFile = new File(oWeeklyQuests.getDataFolder(), "progression.yml");
 
         if (!progressionFile.exists()) {
-            oDailyQuests.saveResource("progression.yml", false);
+            oWeeklyQuests.saveResource("progression.yml", false);
             PluginLogger.info("Progression file created (YAML).");
         }
 
