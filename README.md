@@ -1,4 +1,5 @@
-# ODailyQuests
+# OWeeklyQuests
+- Ordwen's ODailyQuests but able to be run simultaneously to have both daily and weekly quests.
 
 <h3>Dynamize your server & increase player retention !</h3>
 
